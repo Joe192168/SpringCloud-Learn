@@ -1,0 +1,22 @@
+eureka:
+  instance:
+    #以IP地址注册到服务中心，相互注册使用IP地址
+    preferIpAddress: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  application:
+    #和git里的文件名（application）对应
+    name: config-client
+  cloud:
+    config:
+      #分支
+      label: master
+      #环境值
+      profile: dev
+      #config-server的地址
+      uri: http://localhost:8888/
+server:
+  port: 8881
