@@ -6,17 +6,15 @@
 #  client:
 #    serviceUrl:
 #      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8888
 spring:
-  application:
-    #和git里的文件名（application）对应
-    name: config-client
   cloud:
     config:
-      #分支
-      label: master
-      #环境值
-      profile: dev
-      #config-server的地址
-      uri: http://localhost:8888/
-server:
-  port: 8881
+      server:
+        git:
+          uri: https://github.com/Joe192168/TestConfig.git
+          searchPaths: testInfo
+        default-label: master
+  application:
+    name: config-server

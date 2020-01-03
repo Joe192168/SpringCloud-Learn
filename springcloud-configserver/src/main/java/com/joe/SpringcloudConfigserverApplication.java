@@ -2,10 +2,11 @@ package com.joe;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.config.server.EnableConfigServer;
 
 @SpringBootApplication
-@EnableEurekaClient
+@EnableConfigServer
+//@EnableEurekaClient
 public class SpringcloudConfigserverApplication {
 
     public static void main(String[] args) {
