@@ -1,0 +1,28 @@
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: prod
+  application:
+    #和git里的文件名（application）对应
+    name: config-client
+  cloud:
+    config:
+      uri: http://localhost:8888
+      label: master
+      profile: prod
+
+
+---
+spring:
+  profiles: dev
+  application:
+    #和git里的文件名（application）对应
+    name: config-client
+  cloud:
+    config:
+      uri: http://localhost:8888
+      label: master
+      profile: dev
