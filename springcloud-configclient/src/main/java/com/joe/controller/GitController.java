@@ -1,5 +1,6 @@
 package com.joe.controller;
 
+import com.joe.config.GitAutoRefreshConfig;
 import com.joe.config.GitConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,16 +16,16 @@ public class GitController {
     @Autowired
     private GitConfig gitConfig;
 
+    @Autowired
+    private GitAutoRefreshConfig gitAutoRefreshConfig;
+
     @GetMapping(value = "show")
     public Object show(){
         return gitConfig;
     }
 
-    @Value("${data.env}")
-    String testValue;
-    @RequestMapping(value = "/getTestValue")
-    public String getTestValue(){
-
-        return "获取到的配置文件值为："+testValue;
+    @GetMapping(value = "autoShow")
+    public Object autoShow(){
+        return gitAutoRefreshConfig;
     }
 }
