@@ -1,6 +1,11 @@
 spring:
   profiles:
     active: dev
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 ---
 spring:
@@ -13,7 +18,10 @@ spring:
       uri: http://localhost:8888
       label: master
       profile: prod
-
+    bus:
+      trace:
+        enabled: true
+      enabled: true
 
 ---
 spring:
@@ -26,3 +34,7 @@ spring:
       uri: http://localhost:8888
       label: master
       profile: dev
+    bus:
+      trace:
+        enabled: true
+      enabled: true

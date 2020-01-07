@@ -5,10 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * GitAutoRefreshConfig
  * 配合调用 actuator/refresh 方法 再次获取的就是新的值
- * @author fengzheng
- * @date 2019/3/21
  */
 @Component
 @Data
